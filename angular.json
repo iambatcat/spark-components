@@ -3,5 +3,31 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "spark-components": {
+      "projectType": "library",
+      "root": "projects/spark-components",
+      "sourceRoot": "projects/spark-components/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/spark-components/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/spark-components/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/spark-components/tsconfig.spec.json"
+          }
+        }
+      }
+    }
   }
 }
